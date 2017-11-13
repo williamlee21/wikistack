@@ -17,14 +17,20 @@ wiki.use(morgan('dev'))
 wiki.use(bodyParser.urlencoded({extended: true}))
 wiki.use(bodyParser.json())
 wiki.use(express.static(__dirname + '/stylesheets'))
-//wiki.use(express.static(__dirname + '/views'))
+
 
 
 wiki.get('/hello', (req, res) => {
   res.send('I am here! Have some Puppies!')
 })
 
-wiki.use('/', routes)
+
+
+
+
+wiki.use('/', routes);
+
+
 models.User.sync({})
 .then(function () {
     return models.Page.sync({})
