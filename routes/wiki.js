@@ -6,16 +6,18 @@ var user = require('./user')
 // router.use('/wiki', wiki)
 
 router.get('/', function(req, res, next) {
-  res.send('');
+  res.redirect('/');
 });
 
 router.post('/', function(req, res, next) {
-  var postReq = req.body;
-  res.send(postReq);
+  // var postReq = req.body;
+  // res.send(postReq);
+  //res.send('got to POST')
+  res.json(req.body)
 });
 
 router.get('/add', function(req, res, next) {
-  res.send('');
+  res.render('addpage')
 });
 
 
